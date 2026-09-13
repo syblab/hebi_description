@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="A-2085-06-dual-arm">
+
+    <!-- Include xacro file -->
+    <xacro:include filename="$(find hebi_description)/urdf/kits/A-2085-06G-dual-arm.urdf.xacro"/>
+
+    <!-- Base -->
+    <link name="world" />
+
+    <!-- Right Arm -->
+    <xacro:A-2085-06G prefix="right_" parent="world">
+        <origin xyz="0.0 0.5 0.0" rpy="0.0 0.0 0.0"/>
+    </xacro:A-2085-06G>
+
+    <!-- Left Arm -->
+    <xacro:A-2085-06G prefix="left_" parent="world">
+        <origin xyz="0.0 0.5 0.0" rpy="0.0 0.0 0.0"/>
+    </xacro:A-2085-06G>
+</robot>
