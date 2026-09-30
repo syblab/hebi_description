@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="dual_hebi_arm">
+
+  <!-- 先ほどマクロ化した物理モデルファイルと、コントローラファイルを読み込む -->
+  <xacro:include filename="$(find hebi_description)/urdf/kits/A-2085-06G.urdf.xacro" />
+  <xacro:include filename="$(find hebi_description)/urdf/kits/ros2_control/A-2085-06G.ros2_control.xacro" />
+
+  <!-- 空間の基準となるリンク -->
+  <link name="world" />
+
+  <!-- ================= 左手 (Left Arm) ================= -->
+  <!-- 左手ベースの位置と向き（例: Y軸方向に+30cm） -->
+  <joint name="world_to_left_base" type="fixed">
+    <origin xyz="0 0.3 0" rpy="0 0 0" /> 
+    <parent link="world" />
+    <child link="left_base_link" />
+  </joint>
+
+  <xacro:hebi_arm_A_2085_06G prefix="left_" />
+  <xacro:A-2085-06G_ros2_control 
+    name="LeftArmSystem" 
+    prefix="left_" 
+    use_mock_hardware="true" 
+    config_pkg="hebi_description" 
+    config_file="config/arms/A-2085-06G.cfg.yaml" />
+
+  <!-- ================= 右手 (Right Arm) ================= -->
+  <!-- 右手ベースの位置と向き（例: Y軸方向に-30cm） -->
+  <joint name="world_to_right_base" type="fixed">
+    <origin xyz="0 -0.3 0" rpy="0 0 0" /> 
+    <parent link="world" />
+    <child link="right_base_link" />
+  </joint>
+  
+  <xacro:hebi_arm_A_2085_06G prefix="right_" />
+  <xacro:A-2085-06G_ros2_control 
+    name="RightArmSystem" 
+    prefix="right_" 
+    use_mock_hardware="true" 
+    config_pkg="hebi_description" 
+    config_file="config/arms/A-2085-06G.cfg.yaml" />
+
+</robot>
