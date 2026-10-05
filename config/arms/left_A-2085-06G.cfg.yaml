@@ -1,0 +1,41 @@
+version: 1.1
+
+families: ["LeftArm"]
+names: ["J1_base", "J2_shoulder", "J3_elbow",
+        "J4_wrist1", "J5_wrist2", "J6_wrist3"]
+
+hrdf: "hrdf/A-2240-06G.hrdf"
+
+gains:
+  default: "gains/A-2240-06.xml"
+  gripper: "gains/A-2255-01.xml"
+
+feedback_frequency: 100
+command_lifetime: 0.25
+
+user_data:
+  ik_seed_pos: [0.01, 1.0, 2.5, 1.5, -1.5, 0.01]
+  home_position: [0.0, 1.2, 1.8, 2.2, -1.57, 0.0]
+
+  has_gripper: true
+  gripper_family: "LeftArm"
+  gripper_name: "Spool"
+  gripper_open_effort: 1.0
+  gripper_close_effort: -5.05
+
+plugins:
+  - type: GravityCompensationEffort
+    name: left_gravComp
+    enabled: true
+    ramp_time: 5
+
+  - type: DynamicsCompensationEffort
+    name: left_dynamicsComp
+    enabled: true
+    ramp_time: 5
+
+  - name: left_gasSpringCompensation
+    type: EffortOffset
+    enabled: false
+    ramp_time: 5
+    offset: [0, -7, 0, 0, 0, 0]

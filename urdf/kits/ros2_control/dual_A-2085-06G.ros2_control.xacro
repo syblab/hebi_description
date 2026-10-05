@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro">
+
+  <!-- 1. 単体アームのros2_controlマクロを読み込む -->
+  <xacro:include filename="$(find hebi_bringup)/urdf/A-2085-06G.ros2_control.xacro"/>
+
+  <xacro:macro name="dual_A_2085_06G_ros2_control" params="
+                use_mock_hardware:=^|false
+                mock_sensor_commands:=^|false
+                sim_gazebo:=^|false
+                config_pkg
+                config_file"
+  >
+    <!-- 2. 左腕の定義 (prefix="left_") -->
+    <xacro:A-2085-06G_ros2_control
+      name="LeftHebiSystem"
+      prefix="left_"
+      use_mock_hardware="${use_mock_hardware}"
+      mock_sensor_commands="${mock_sensor_commands}"
+      sim_gazebo="${sim_gazebo}"
+      config_pkg="${config_pkg}"
+      config_file="${config_file}"/>
+
+    <!-- 3. 右腕の定義 (prefix="right_") -->
+    <xacro:A-2085-06G_ros2_control
+      name="RightHebiSystem"
+      prefix="right_"
+      use_mock_hardware="${use_mock_hardware}"
+      mock_sensor_commands="${mock_sensor_commands}"
+      sim_gazebo="${sim_gazebo}"
+      config_pkg="${config_pkg}"
+      config_file="${config_file}"/>
+
+    <!-- 4. Gazeboプラグイン (全体で1つだけ読み込む) -->
+    <xacro:if value="${sim_gazebo}">
+      <gazebo>
+        <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+          <!-- 注意: 双腕用に左右両方のコントローラーが記述されたyamlを指定する必要があります -->
+          <parameters>$(find hebi_bringup)/config/dual_controllers.yaml</parameters>
+        </plugin>
+      </gazebo>
+    </xacro:if>
+
+  </xacro:macro>
+</robot>
