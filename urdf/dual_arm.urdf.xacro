@@ -3,45 +3,20 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"
        name="dual_hebi_arm">
 
-  <!-- ========================================================= -->
-  <!-- HEBI physical model                                       -->
-  <!-- ========================================================= -->
-  <xacro:include
-    filename="$(find hebi_description)/urdf/kits/A-2085-06G.urdf.xacro" />
+  <xacro:include filename="$(find hebi_description)/urdf/kits/A-2085-06G.urdf.xacro" />
+  <xacro:include filename="$(find hebi_description)/urdf/kits/ros2_control/A-2085-06G.ros2_control.xacro" />
 
-  <!-- ========================================================= -->
-  <!-- HEBI ros2_control                                         -->
-  <!-- ========================================================= -->
-  <xacro:include
-    filename="$(find hebi_description)/urdf/kits/ros2_control/A-2085-06G.ros2_control.xacro" />
-
-
-  <!-- ========================================================= -->
-  <!-- World                                                     -->
-  <!-- ========================================================= -->
   <link name="world" />
-  <gazebo reference="world">
-    <static>true</static>
-  </gazebo>
 
-  <!-- ========================================================= -->
-  <!-- LEFT ARM                                                  -->
-  <!-- ========================================================= -->
-
-  <!-- Left arm base position -->
+  <!-- LEFT ARM -->
   <joint name="world_to_left_base" type="fixed">
-    <origin
-      xyz="0 0.13 0"
-      rpy="0 0 -1.75" />
+    <origin xyz="0 0.13 0" rpy="0 0 -1.75" />
     <parent link="world" />
     <child link="left_base_link" />
   </joint>
 
-  <!-- Left arm physical model -->
-  <xacro:hebi_arm_A_2085_06G
-    prefix="left_" />
+  <xacro:hebi_arm_A_2085_06G prefix="left_" />
 
-  <!-- Left arm hardware interface -->
   <xacro:A-2085-06G_ros2_control
     name="LeftArmSystem"
     prefix="left_"
@@ -50,25 +25,15 @@
     config_pkg="hebi_description"
     config_file="config/arms/left_A-2085-06G.cfg.yaml" />
 
-
-  <!-- ========================================================= -->
-  <!-- RIGHT ARM                                                 -->
-  <!-- ========================================================= -->
-
-  <!-- Right arm base position -->
+  <!-- RIGHT ARM -->
   <joint name="world_to_right_base" type="fixed">
-    <origin
-      xyz="0 0 0"
-      rpy="0 0 0" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
     <parent link="world" />
     <child link="right_base_link" />
   </joint>
 
-  <!-- Right arm physical model -->
-  <xacro:hebi_arm_A_2085_06G
-    prefix="right_" />
+  <xacro:hebi_arm_A_2085_06G prefix="right_" />
 
-  <!-- Right arm hardware interface -->
   <xacro:A-2085-06G_ros2_control
     name="RightArmSystem"
     prefix="right_"
@@ -76,85 +41,5 @@
     use_gripper="true"
     config_pkg="hebi_description"
     config_file="config/arms/right_A-2085-06G.cfg.yaml" />
-
-
-<!-- ========================================================= -->
-  <!-- CAMERA (Based on mani robot)                              -->
-  <!-- ========================================================= -->
-  
-  <material name="grey">
-      <color rgba="0.5 0.5 0.5 1"/>
-  </material>
-
-  <!-- base_linkが存在しないため、全体の基準であるworldを親としています -->
-  <joint name="camera_joint" type="fixed">
-    <parent link="world"/>
-    <child link="camera_link"/>
-    <origin xyz="0.05 0.06 0.065" rpy="0 0 0"/>
-  </joint>
-
-  <link name="camera_link">
-    <visual>
-      <geometry>
-        <!-- maniのカメラサイズを適用 -->
-        <box size="0.0123 0.0653 0.0225"/>
-      </geometry>
-      <material name="grey" />
-    </visual>
-    <!-- Gazeboでのリンク消滅を防ぐダミー質量 -->
-    <inertial>
-      <mass value="0.1" />
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <inertia ixx="0.0001" ixy="0.0" ixz="0.0" iyy="0.0001" iyz="0.0" izz="0.0001" />
-    </inertial>
-  </link>
-
-  <!-- ROS標準の画像処理用座標系（YOLOなどで必要） -->
-  <joint name="camera_optical_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="-1.5708 0 -1.5708" />
-    <parent link="camera_link" />
-    <child link="camera_color_optical_frame" />
-  </joint>
-  
-  <link name="camera_color_optical_frame">
-    <inertial>
-      <mass value="0.001" />
-      <origin xyz="0 0 0" rpy="0 0 0" />
-      <inertia ixx="0.00001" ixy="0.0" ixz="0.0" iyy="0.00001" iyz="0.0" izz="0.00001" />
-    </inertial>
-  </link>
-
-  <!-- ========================================================= -->
-  <!-- GAZEBO SIMULATION PLUGINS                                 -->
-  <!-- ========================================================= -->
-
-  <!-- 1. Gazebo ROS 2 Control (プラグイン名を修正) -->
-  <gazebo>
-    <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-      <parameters>$(find dual_hebi_moveit_config)/config/ros2_controllers.yaml</parameters>
-    </plugin>
-  </gazebo>
-
-  <!-- 2. Gazebo RGB-D Camera Sensor -->
-  <gazebo reference="camera_link">
-    <sensor name="orbbec_astra" type="rgbd_camera">
-      <update_rate>30.0</update_rate>
-      <always_on>true</always_on>
-      <visualize>true</visualize>
-      <topic>/camera</topic>
-      <camera>
-        <horizontal_fov>1.047</horizontal_fov>
-        <image>
-          <width>640</width>
-          <height>480</height>
-          <format>R8G8B8</format>
-        </image>
-        <clip>
-          <near>0.1</near>
-          <far>10.0</far>
-        </clip>
-      </camera>
-    </sensor>
-  </gazebo>
 
 </robot>
