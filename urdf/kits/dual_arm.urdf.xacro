@@ -27,8 +27,7 @@
   <!-- 空間の基準となるリンク -->
   <link name="world" />
 
-  <!-- ロボットの「基準点（base_link）」を地面（床面）に垂直に投影した仮想的なリンク（座標系） -->
-  <!-- base_link and base_footprint -->
+  <!-- base_footprint -->
   <joint name="base_footprint_joint" type="fixed">
       <parent link="world"/>
       <child link="base_footprint"/>
@@ -38,7 +37,7 @@
   <link name="base_footprint" />
 
 
-  <!-- base_link and base_footprint -->
+  <!-- base_link -->
   <joint name="base_joint" type="fixed">
       <parent link="base_footprint"/>
       <child link="base_link"/>
@@ -55,11 +54,11 @@
       </visual>
   </link>
 
-  <!-- base_link and vertical_bar_left_link -->
+  <!-- vertical_bar_left_link -->
   <joint name="vertical_bar_left_joint" type="fixed">
     <parent link="base_link"/>
     <child link="vertical_bar_left_link"/>
-    <origin xyz="-0.1225 0.06 0.245" rpy="0 0 0"/> <!--0.12 + 0.125--><!--0.2725 - 0.15-->
+    <origin xyz="-0.1225 0.06 0.245" rpy="0 0 0"/>
   </joint>
 
   <link name="vertical_bar_left_link">
@@ -71,11 +70,11 @@
     </visual>
   </link>
 
-  <!-- base_link and vertical_bar_right_link -->
+  <!-- vertical_bar_right_link -->
   <joint name="vertical_bar_right_joint" type="fixed">
     <parent link="base_link"/>
     <child link="vertical_bar_right_link"/>
-    <origin xyz="-0.1225 -0.06 0.245" rpy="0 0 0"/> <!--0.12 + 0.125-->
+    <origin xyz="-0.1225 -0.06 0.245" rpy="0 0 0"/>
   </joint>
 
   <link name="vertical_bar_right_link">
@@ -87,11 +86,11 @@
     </visual>
   </link>
 
-  <!-- vertical_bar_right_link to horizontal_bar_joint -->
+  <!-- horizontal_bar_joint -->
   <joint name="horizontal_bar_joint" type="fixed">
     <parent link="vertical_bar_right_link"/>
     <child link="horizontal_bar_link"/>
-    <origin xyz="0.0 0.06 0.15" rpy="0 1.57 1.57"/><!--0.025 + 0.125-->
+    <origin xyz="0.0 0.06 0.15" rpy="0 1.57 1.57"/>
   </joint>
 
   <link name="horizontal_bar_link">
@@ -123,7 +122,7 @@
   <joint name="vertical_bar2_right_joint" type="fixed">
     <parent link="horizontal_bar_link"/>
     <child link="vertical_bar2_right_link"/>
-    <origin xyz="-0.23 0.0 -0.06" rpy="0 1.57 0"/><!---0.21-->
+    <origin xyz="-0.23 0.0 -0.06" rpy="0 1.57 0"/>
   </joint>
 
   <link name="vertical_bar2_right_link">
