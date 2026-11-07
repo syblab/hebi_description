@@ -37,7 +37,7 @@
 
           <!-- Gripper configuration -->
           <xacro:if value="${use_gripper}">
-            <param name="gripper_joint_name">${prefix}end_effector_1/input_l_finger</param>
+            <param name="gripper_joint_name">${prefix}end_effector_1_input_l_finger</param>
           </xacro:if>
         </xacro:unless>
       </hardware>
@@ -116,7 +116,7 @@
 
       <!-- Gripper joint -->
       <xacro:if value="${use_gripper}">
-        <joint name="${prefix}end_effector_1/input_l_finger">
+        <joint name="${prefix}end_effector_1_input_l_finger">
           <command_interface name="position" />
           <command_interface name="velocity" />
           <state_interface name="position">

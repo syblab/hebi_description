@@ -1,0 +1,685 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "dual_hebi_arm"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+over "dual_hebi_arm" (
+    prepend apiSchemas = ["IsaacRobotAPI"]
+)
+{
+    prepend rel isaac:physics:robotJoints = [
+        </dual_hebi_arm/Physics/left_base_joint>,
+        </dual_hebi_arm/Physics/left_J1_base>,
+        </dual_hebi_arm/Physics/left_bracket_1_J2_shoulder>,
+        </dual_hebi_arm/Physics/left_J2_shoulder>,
+        </dual_hebi_arm/Physics/tn__left_link_1joint_ZP>,
+        </dual_hebi_arm/Physics/left_J3_elbow>,
+        </dual_hebi_arm/Physics/tn__left_link_2joint_ZP>,
+        </dual_hebi_arm/Physics/left_J4_wrist1>,
+        </dual_hebi_arm/Physics/left_bracket_2_J5_wrist2>,
+        </dual_hebi_arm/Physics/left_J5_wrist2>,
+        </dual_hebi_arm/Physics/left_bracket_3_J6_wrist3>,
+        </dual_hebi_arm/Physics/left_J6_wrist3>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1input_center_hub_bs0>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1input_l_finger_ap0>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1input_r_finger_ap0>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1center_hub_pinion_rt0>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1center_hub_l_inner_linkage_gc1>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1center_hub_r_inner_linkage_gc1>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1l_finger_l_outer_linkage_fZ1>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1l_outer_linkage_l_gripper_va1>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1l_gripper_finger_l_gripper_bend_yj1>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1r_finger_r_outer_linkage_fZ1>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1r_outer_linkage_r_gripper_va1>,
+        </dual_hebi_arm/Physics/tn__left_end_effector_1r_gripper_finger_r_gripper_bend_yj1>,
+        </dual_hebi_arm/Physics/right_base_joint>,
+        </dual_hebi_arm/Physics/right_J1_base>,
+        </dual_hebi_arm/Physics/right_bracket_1_J2_shoulder>,
+        </dual_hebi_arm/Physics/right_J2_shoulder>,
+        </dual_hebi_arm/Physics/tn__right_link_1joint_qQ>,
+        </dual_hebi_arm/Physics/right_J3_elbow>,
+        </dual_hebi_arm/Physics/tn__right_link_2joint_qQ>,
+        </dual_hebi_arm/Physics/right_J4_wrist1>,
+        </dual_hebi_arm/Physics/right_bracket_2_J5_wrist2>,
+        </dual_hebi_arm/Physics/right_J5_wrist2>,
+        </dual_hebi_arm/Physics/right_bracket_3_J6_wrist3>,
+        </dual_hebi_arm/Physics/right_J6_wrist3>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1input_center_hub_st0>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1center_hub_pinion_dv0>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1l_gripper_finger_l_gripper_bend_kl1>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1input_l_finger_rq0>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1l_finger_l_outer_linkage_wa1>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1l_outer_linkage_l_gripper_hc1>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1r_gripper_finger_r_gripper_bend_kl1>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1input_r_finger_rq0>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1r_finger_r_outer_linkage_wa1>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1r_outer_linkage_r_gripper_hc1>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1center_hub_l_inner_linkage_xd1>,
+        </dual_hebi_arm/Physics/tn__right_end_effector_1center_hub_r_inner_linkage_xd1>,
+    ]
+    prepend rel isaac:physics:robotLinks = [
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1center_hub_Yj0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1center_hub_Yj0/tn__left_end_effector_1center_pinion_pn0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1center_hub_Yj0/tn__left_end_effector_1l_inner_linkage_qq0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1center_hub_Yj0/tn__left_end_effector_1r_inner_linkage_qq0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1l_finger_Xg0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1l_finger_Xg0/tn__left_end_effector_1l_outer_linkage_qq0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1l_finger_Xg0/tn__left_end_effector_1l_outer_linkage_qq0/tn__left_end_effector_1l_gripper_nh0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1l_finger_Xg0/tn__left_end_effector_1l_outer_linkage_qq0/tn__left_end_effector_1l_gripper_nh0/tn__left_end_effector_1l_gripper_bend_ap0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1r_finger_Xg0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1r_finger_Xg0/tn__left_end_effector_1r_outer_linkage_qq0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1r_finger_Xg0/tn__left_end_effector_1r_outer_linkage_qq0/tn__left_end_effector_1r_gripper_nh0>,
+        </dual_hebi_arm/Geometry/world/left_base_link/tn__left_J1_basebody_aP/left_bracket_1/tn__left_J2_shoulderbody_gV0/left_link_1/tn__left_J3_elbowbody_rQ/left_link_2/tn__left_J4_wrist1body_dS/left_bracket_2/tn__left_J5_wrist2body_dS/left_bracket_3/tn__left_J6_wrist3body_dS/left_end_effector_1/tn__left_end_effector_1r_finger_Xg0/tn__left_end_effector_1r_outer_linkage_qq0/tn__left_end_effector_1r_gripper_nh0/tn__left_end_effector_1r_gripper_bend_ap0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1center_hub_pk0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1center_hub_pk0/tn__right_end_effector_1center_pinion_bp0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1l_finger_oh0/tn__right_end_effector_1l_outer_linkage_cs0/tn__right_end_effector_1l_gripper_Zj0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1l_finger_oh0/tn__right_end_effector_1l_outer_linkage_cs0/tn__right_end_effector_1l_gripper_Zj0/tn__right_end_effector_1l_gripper_bend_rq0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1l_finger_oh0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1l_finger_oh0/tn__right_end_effector_1l_outer_linkage_cs0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1r_finger_oh0/tn__right_end_effector_1r_outer_linkage_cs0/tn__right_end_effector_1r_gripper_Zj0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1r_finger_oh0/tn__right_end_effector_1r_outer_linkage_cs0/tn__right_end_effector_1r_gripper_Zj0/tn__right_end_effector_1r_gripper_bend_rq0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1r_finger_oh0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1r_finger_oh0/tn__right_end_effector_1r_outer_linkage_cs0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1center_hub_pk0/tn__right_end_effector_1l_inner_linkage_cs0>,
+        </dual_hebi_arm/Geometry/world/right_base_link/tn__right_J1_basebody_rQ/right_bracket_1/tn__right_J2_shoulderbody_xW0/right_link_1/tn__right_J3_elbowbody_dS/right_link_2/tn__right_J4_wrist1body_uT/right_bracket_2/tn__right_J5_wrist2body_uT/right_bracket_3/tn__right_J6_wrist3body_uT/right_end_effector_1/tn__right_end_effector_1center_hub_pk0/tn__right_end_effector_1r_inner_linkage_cs0>,
+    ]
+    token isaac:robotType = "Manipulator"
+
+    over "Geometry"
+    {
+        over "world"
+        {
+            over "left_base_link"
+            {
+                over "tn__left_J1_basebody_aP" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "left_bracket_1" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "tn__left_J2_shoulderbody_gV0" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "left_link_1" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "tn__left_J3_elbowbody_rQ" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "left_link_2" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                        over "tn__left_J4_wrist1body_dS" (
+                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                        )
+                                        {
+                                            over "left_bracket_2" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "tn__left_J5_wrist2body_dS" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "left_bracket_3" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "tn__left_J6_wrist3body_dS" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                            over "left_end_effector_1" (
+                                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                                            )
+                                                            {
+                                                                over "tn__left_end_effector_1center_hub_Yj0" (
+                                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                )
+                                                                {
+                                                                    over "tn__left_end_effector_1center_pinion_pn0" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                    }
+
+                                                                    over "tn__left_end_effector_1l_inner_linkage_qq0" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                    }
+
+                                                                    over "tn__left_end_effector_1r_inner_linkage_qq0" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                    }
+                                                                }
+
+                                                                over "tn__left_end_effector_1l_finger_Xg0" (
+                                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                )
+                                                                {
+                                                                    over "tn__left_end_effector_1l_outer_linkage_qq0" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                        over "tn__left_end_effector_1l_gripper_nh0" (
+                                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                        )
+                                                                        {
+                                                                            over "tn__left_end_effector_1l_gripper_bend_ap0" (
+                                                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                            )
+                                                                            {
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                over "tn__left_end_effector_1r_finger_Xg0" (
+                                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                )
+                                                                {
+                                                                    over "tn__left_end_effector_1r_outer_linkage_qq0" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                        over "tn__left_end_effector_1r_gripper_nh0" (
+                                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                        )
+                                                                        {
+                                                                            over "tn__left_end_effector_1r_gripper_bend_ap0" (
+                                                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                            )
+                                                                            {
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                over "tn__left_end_effector_1output_Wd0" (
+                                                                    prepend apiSchemas = ["IsaacSiteAPI"]
+                                                                )
+                                                                {
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            over "right_base_link"
+            {
+                over "tn__right_J1_basebody_rQ" (
+                    prepend apiSchemas = ["IsaacLinkAPI"]
+                )
+                {
+                    over "right_bracket_1" (
+                        prepend apiSchemas = ["IsaacLinkAPI"]
+                    )
+                    {
+                        over "tn__right_J2_shoulderbody_xW0" (
+                            prepend apiSchemas = ["IsaacLinkAPI"]
+                        )
+                        {
+                            over "right_link_1" (
+                                prepend apiSchemas = ["IsaacLinkAPI"]
+                            )
+                            {
+                                over "tn__right_J3_elbowbody_dS" (
+                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                )
+                                {
+                                    over "right_link_2" (
+                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                    )
+                                    {
+                                        over "tn__right_J4_wrist1body_uT" (
+                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                        )
+                                        {
+                                            over "right_bracket_2" (
+                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                            )
+                                            {
+                                                over "tn__right_J5_wrist2body_uT" (
+                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                )
+                                                {
+                                                    over "right_bracket_3" (
+                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                    )
+                                                    {
+                                                        over "tn__right_J6_wrist3body_uT" (
+                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                        )
+                                                        {
+                                                            over "right_end_effector_1" (
+                                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                                            )
+                                                            {
+                                                                over "tn__right_end_effector_1center_hub_pk0" (
+                                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                )
+                                                                {
+                                                                    over "tn__right_end_effector_1center_pinion_bp0" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                    }
+
+                                                                    over "tn__right_end_effector_1l_inner_linkage_cs0" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                    }
+
+                                                                    over "tn__right_end_effector_1r_inner_linkage_cs0" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                    }
+                                                                }
+
+                                                                over "tn__right_end_effector_1l_finger_oh0" (
+                                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                )
+                                                                {
+                                                                    over "tn__right_end_effector_1l_outer_linkage_cs0" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                        over "tn__right_end_effector_1l_gripper_Zj0" (
+                                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                        )
+                                                                        {
+                                                                            over "tn__right_end_effector_1l_gripper_bend_rq0" (
+                                                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                            )
+                                                                            {
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                over "tn__right_end_effector_1r_finger_oh0" (
+                                                                    prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                )
+                                                                {
+                                                                    over "tn__right_end_effector_1r_outer_linkage_cs0" (
+                                                                        prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                    )
+                                                                    {
+                                                                        over "tn__right_end_effector_1r_gripper_Zj0" (
+                                                                            prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                        )
+                                                                        {
+                                                                            over "tn__right_end_effector_1r_gripper_bend_rq0" (
+                                                                                prepend apiSchemas = ["IsaacLinkAPI"]
+                                                                            )
+                                                                            {
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+
+                                                                over "tn__right_end_effector_1output_ne0" (
+                                                                    prepend apiSchemas = ["IsaacSiteAPI"]
+                                                                )
+                                                                {
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    over "Physics"
+    {
+        over "left_base_joint" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "left_J1_base" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "left_bracket_1_J2_shoulder" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "left_J2_shoulder" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_link_1joint_ZP" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "left_J3_elbow" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_link_2joint_ZP" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "left_J4_wrist1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "left_bracket_2_J5_wrist2" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "left_J5_wrist2" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "left_bracket_3_J6_wrist3" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "left_J6_wrist3" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1input_center_hub_bs0" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1center_hub_pinion_rt0" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1l_gripper_finger_l_gripper_bend_yj1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1input_l_finger_ap0" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1l_finger_l_outer_linkage_fZ1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1l_outer_linkage_l_gripper_va1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1r_gripper_finger_r_gripper_bend_yj1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1input_r_finger_ap0" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1r_finger_r_outer_linkage_fZ1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1r_outer_linkage_r_gripper_va1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1center_hub_l_inner_linkage_gc1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__left_end_effector_1center_hub_r_inner_linkage_gc1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_base_joint" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_J1_base" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_bracket_1_J2_shoulder" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_J2_shoulder" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_link_1joint_qQ" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_J3_elbow" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_link_2joint_qQ" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_J4_wrist1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_bracket_2_J5_wrist2" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_J5_wrist2" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_bracket_3_J6_wrist3" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "right_J6_wrist3" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1input_center_hub_st0" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1center_hub_pinion_dv0" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1l_gripper_finger_l_gripper_bend_kl1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1input_l_finger_rq0" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1l_finger_l_outer_linkage_wa1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1l_outer_linkage_l_gripper_hc1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1r_gripper_finger_r_gripper_bend_kl1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1input_r_finger_rq0" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1r_finger_r_outer_linkage_wa1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1r_outer_linkage_r_gripper_hc1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1center_hub_l_inner_linkage_xd1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+
+        over "tn__right_end_effector_1center_hub_r_inner_linkage_xd1" (
+            prepend apiSchemas = ["IsaacJointAPI"]
+        )
+        {
+        }
+    }
+}
+

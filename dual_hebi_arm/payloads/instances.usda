@@ -1,0 +1,327 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    upAxis = "Z"
+)
+
+def Scope "Instances"
+{
+    def Xform "X8" (
+        prepend references = @./geometries.usd@</Geometries/X8>
+    )
+    {
+        over "X8" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/X8/VisualMaterials/red>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "red" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/red>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "tn__PM214901_ZC7" (
+        prepend references = @./geometries.usd@</Geometries/tn__PM214901_ZC7>
+    )
+    {
+        over "tn__PM214901_ZC7" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/tn__PM214901_ZC7/VisualMaterials/black>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "black" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "tn__PM215001R_nD7" (
+        prepend references = @./geometries.usd@</Geometries/tn__PM215001R_nD7>
+    )
+    {
+        over "tn__PM215001R_nD7" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/tn__PM215001R_nD7/VisualMaterials/black>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "black" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "tn__A203802_pA6" (
+        prepend references = @./geometries.usd@</Geometries/tn__A203802_pA6>
+    )
+    {
+        over "tn__A203802_pA6" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/tn__A203802_pA6/VisualMaterials/black>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "black" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "tn__A203902_pA6" (
+        prepend references = @./geometries.usd@</Geometries/tn__A203902_pA6>
+    )
+    {
+        over "tn__A203902_pA6" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/tn__A203902_pA6/VisualMaterials/black>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "black" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "X5" (
+        prepend references = @./geometries.usd@</Geometries/X5>
+    )
+    {
+        over "X5" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/X5/VisualMaterials/red>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "red" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/red>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "tn__PM213201R_nD7" (
+        prepend references = @./geometries.usd@</Geometries/tn__PM213201R_nD7>
+    )
+    {
+        over "tn__PM213201R_nD7" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/tn__PM213201R_nD7/VisualMaterials/beige>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "beige" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/beige>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "tn__PM235702_ZC7" (
+        prepend references = @./geometries.usd@</Geometries/tn__PM235702_ZC7>
+    )
+    {
+        over "tn__PM235702_ZC7" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/tn__PM235702_ZC7/VisualMaterials/black>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "black" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "tn__PM229101_ZC7" (
+        prepend references = @./geometries.usd@</Geometries/tn__PM229101_ZC7>
+    )
+    {
+        over "tn__PM229101_ZC7" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/tn__PM229101_ZC7/VisualMaterials/silver>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "silver" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/silver>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "tn__PM235902_ZC7" (
+        prepend references = @./geometries.usd@</Geometries/tn__PM235902_ZC7>
+    )
+    {
+        over "tn__PM235902_ZC7" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/tn__PM235902_ZC7/VisualMaterials/black>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "black" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "tn__PM222101_ZC7" (
+        prepend references = @./geometries.usd@</Geometries/tn__PM222101_ZC7>
+    )
+    {
+        over "tn__PM222101_ZC7" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/tn__PM222101_ZC7/VisualMaterials/silver>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "silver" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/silver>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "tn__PM235802_ZC7" (
+        prepend references = @./geometries.usd@</Geometries/tn__PM235802_ZC7>
+    )
+    {
+        over "tn__PM235802_ZC7" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/tn__PM235802_ZC7/VisualMaterials/black>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "black" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/black>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "tn__PM236002_ZC7" (
+        prepend references = @./geometries.usd@</Geometries/tn__PM236002_ZC7>
+    )
+    {
+        over "tn__PM236002_ZC7" (
+            apiSchemas = ["MaterialBindingAPI", "PhysicsCollisionAPI", "PhysicsMeshCollisionAPI"]
+        )
+        {
+            custom rel material:binding
+            prepend rel material:binding = </Instances/tn__PM236002_ZC7/VisualMaterials/black>
+            token physics:approximation = "convexHull"
+        }
+
+        def Scope "VisualMaterials"
+        {
+            def Material "black" (
+                instanceable = true
+                prepend references = @./materials.usda@</Materials/black>
+            )
+            {
+            }
+        }
+    }
+}
+

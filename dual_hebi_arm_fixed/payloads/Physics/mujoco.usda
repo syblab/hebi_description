@@ -1,0 +1,412 @@
+#usda 1.0
+(
+    customLayerData = {
+        string creator = "URDF USD Converter v0.3.2"
+    }
+    defaultPrim = "dual_hebi_arm"
+    endTimeCode = 1000000
+    kilogramsPerUnit = 1
+    metersPerUnit = 1
+    startTimeCode = 0
+    subLayers = [
+        @./physics.usda@
+    ]
+    upAxis = "Z"
+)
+
+over "dual_hebi_arm"
+{
+    over "Physics"
+    {
+        over "left_J1_base" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_J2_shoulder" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_J3_elbow" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_J4_wrist1" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_J5_wrist2" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_J6_wrist3" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_end_effector_1_center_hub_pinion" (
+            delete apiSchemas = ["PhysicsDriveAPI:linear", "PhysicsJointStateAPI:linear"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_end_effector_1_input_l_finger" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_end_effector_1_l_outer_linkage_l_gripper" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_end_effector_1_input_r_finger" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_end_effector_1_r_outer_linkage_r_gripper" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_end_effector_1_center_hub_l_inner_linkage" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "left_end_effector_1_center_hub_r_inner_linkage" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_J1_base" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_J2_shoulder" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_J3_elbow" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_J4_wrist1" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_J5_wrist2" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_J6_wrist3" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_end_effector_1_center_hub_pinion" (
+            delete apiSchemas = ["PhysicsDriveAPI:linear", "PhysicsJointStateAPI:linear"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_end_effector_1_input_l_finger" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_end_effector_1_l_outer_linkage_l_gripper" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_end_effector_1_input_r_finger" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_end_effector_1_r_outer_linkage_r_gripper" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_end_effector_1_center_hub_l_inner_linkage" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        over "right_end_effector_1_center_hub_r_inner_linkage" (
+            delete apiSchemas = ["PhysicsDriveAPI:angular", "PhysicsJointStateAPI:angular"]
+            prepend apiSchemas = ["MjcJointAPI"]
+        )
+        {
+        }
+
+        def MjcActuator "left_J1_base_actuator"
+        {
+            uniform double mjc:forceRange:max = 20
+            uniform double mjc:forceRange:min = -20
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_J1_base>
+        }
+
+        def MjcActuator "left_J2_shoulder_actuator"
+        {
+            uniform double mjc:forceRange:max = 38
+            uniform double mjc:forceRange:min = -38
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_J2_shoulder>
+        }
+
+        def MjcActuator "left_J3_elbow_actuator"
+        {
+            uniform double mjc:forceRange:max = 20
+            uniform double mjc:forceRange:min = -20
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_J3_elbow>
+        }
+
+        def MjcActuator "left_J4_wrist1_actuator"
+        {
+            uniform double mjc:forceRange:max = 2.5
+            uniform double mjc:forceRange:min = -2.5
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_J4_wrist1>
+        }
+
+        def MjcActuator "left_J5_wrist2_actuator"
+        {
+            uniform double mjc:forceRange:max = 2.5
+            uniform double mjc:forceRange:min = -2.5
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_J5_wrist2>
+        }
+
+        def MjcActuator "left_J6_wrist3_actuator"
+        {
+            uniform double mjc:forceRange:max = 2.5
+            uniform double mjc:forceRange:min = -2.5
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_J6_wrist3>
+        }
+
+        def MjcActuator "left_end_effector_1_center_hub_pinion_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_end_effector_1_center_hub_pinion>
+        }
+
+        def MjcActuator "left_end_effector_1_input_l_finger_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_end_effector_1_input_l_finger>
+        }
+
+        def MjcActuator "left_end_effector_1_l_outer_linkage_l_gripper_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_end_effector_1_l_outer_linkage_l_gripper>
+        }
+
+        def MjcActuator "left_end_effector_1_input_r_finger_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_end_effector_1_input_r_finger>
+        }
+
+        def MjcActuator "left_end_effector_1_r_outer_linkage_r_gripper_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_end_effector_1_r_outer_linkage_r_gripper>
+        }
+
+        def MjcActuator "left_end_effector_1_center_hub_l_inner_linkage_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_end_effector_1_center_hub_l_inner_linkage>
+        }
+
+        def MjcActuator "left_end_effector_1_center_hub_r_inner_linkage_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/left_end_effector_1_center_hub_r_inner_linkage>
+        }
+
+        def MjcActuator "right_J1_base_actuator"
+        {
+            uniform double mjc:forceRange:max = 20
+            uniform double mjc:forceRange:min = -20
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_J1_base>
+        }
+
+        def MjcActuator "right_J2_shoulder_actuator"
+        {
+            uniform double mjc:forceRange:max = 38
+            uniform double mjc:forceRange:min = -38
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_J2_shoulder>
+        }
+
+        def MjcActuator "right_J3_elbow_actuator"
+        {
+            uniform double mjc:forceRange:max = 20
+            uniform double mjc:forceRange:min = -20
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_J3_elbow>
+        }
+
+        def MjcActuator "right_J4_wrist1_actuator"
+        {
+            uniform double mjc:forceRange:max = 2.5
+            uniform double mjc:forceRange:min = -2.5
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_J4_wrist1>
+        }
+
+        def MjcActuator "right_J5_wrist2_actuator"
+        {
+            uniform double mjc:forceRange:max = 2.5
+            uniform double mjc:forceRange:min = -2.5
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_J5_wrist2>
+        }
+
+        def MjcActuator "right_J6_wrist3_actuator"
+        {
+            uniform double mjc:forceRange:max = 2.5
+            uniform double mjc:forceRange:min = -2.5
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_J6_wrist3>
+        }
+
+        def MjcActuator "right_end_effector_1_center_hub_pinion_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_end_effector_1_center_hub_pinion>
+        }
+
+        def MjcActuator "right_end_effector_1_input_l_finger_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_end_effector_1_input_l_finger>
+        }
+
+        def MjcActuator "right_end_effector_1_l_outer_linkage_l_gripper_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_end_effector_1_l_outer_linkage_l_gripper>
+        }
+
+        def MjcActuator "right_end_effector_1_input_r_finger_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_end_effector_1_input_r_finger>
+        }
+
+        def MjcActuator "right_end_effector_1_r_outer_linkage_r_gripper_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_end_effector_1_r_outer_linkage_r_gripper>
+        }
+
+        def MjcActuator "right_end_effector_1_center_hub_l_inner_linkage_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_end_effector_1_center_hub_l_inner_linkage>
+        }
+
+        def MjcActuator "right_end_effector_1_center_hub_r_inner_linkage_actuator"
+        {
+            uniform double mjc:forceRange:max = 1000
+            uniform double mjc:forceRange:min = -1000
+            custom rel mjc:target
+            append rel mjc:target = </dual_hebi_arm/Physics/right_end_effector_1_center_hub_r_inner_linkage>
+        }
+    }
+}
+

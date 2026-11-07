@@ -26,7 +26,7 @@
   </xacro:macro>
 
   <xacro:macro name="parallel_gripper_outer_subassembly" params="name prefix">
-    <link name="${name}/${prefix}_finger">
+    <link name="${name}_${prefix}_finger">
       <visual>
         <origin xyz="-0.006 -0.0055 -0.0045" rpy="${pi/2} 0 ${pi/2}" />
         <geometry>
@@ -53,11 +53,11 @@
       </inertial>
       <self_collide>true</self_collide>
     </link>
-    <gazebo reference="${name}/${prefix}_finger">
+    <gazebo reference="${name}_${prefix}_finger">
       <xacro:gazebo_silver_material />
     </gazebo>
 
-    <link name="${name}/${prefix}_outer_linkage">
+    <link name="${name}_${prefix}_outer_linkage">
       <visual>
         <origin xyz="-0.0115 0.029 -0.004" rpy="${pi/2} 0 0" />
         <geometry>
@@ -83,11 +83,11 @@
           izz="${1/12 * 0.010 * (0.023*0.023 + 0.03*0.03)}" />
       </inertial>
     </link>
-    <gazebo reference="${name}/${prefix}_outer_linkage">
+    <gazebo reference="${name}_${prefix}_outer_linkage">
       <xacro:gazebo_black_material />
     </gazebo>
 
-    <link name="${name}/${prefix}_gripper">
+    <link name="${name}_${prefix}_gripper">
       <visual>
         <origin xyz="-0.006 -0.0115 -0.0036" rpy="${0.5*pi} ${0.0*pi} ${0.5*pi}" />
         <geometry>
@@ -112,11 +112,11 @@
           izz="${1/12 * 0.014 * ( 0.01*0.01 + 0.01*0.01 )}" />
       </inertial>
     </link>
-    <gazebo reference="${name}/${prefix}_gripper">
+    <gazebo reference="${name}_${prefix}_gripper">
       <xacro:gazebo_black_material />
     </gazebo>
 
-    <link name="${name}/${prefix}_gripper_bend">
+    <link name="${name}_${prefix}_gripper_bend">
       <visual>
         <origin xyz="0 0 0" rpy="0 ${0.5*pi} 0" />
         <geometry>
@@ -140,33 +140,33 @@
           izz="${1/2  * 0.001 * pow(0.002, 2)}" />
       </inertial>
     </link>
-    <gazebo reference="${name}/${prefix}_gripper_bend">
+    <gazebo reference="${name}_${prefix}_gripper_bend">
       <xacro:gazebo_silver_material />
     </gazebo>
 
-    <joint name="${name}/${prefix}_gripper_finger_${prefix}_gripper_bend" type="fixed">
+    <joint name="${name}_${prefix}_gripper_finger_${prefix}_gripper_bend" type="fixed">
       <origin xyz="0.0 -0.0075 0.0165" rpy="0 0 0" />
-      <parent link="${name}/${prefix}_gripper" />
-      <child link="${name}/${prefix}_gripper_bend" />
+      <parent link="${name}_${prefix}_gripper" />
+      <child link="${name}_${prefix}_gripper_bend" />
     </joint>
-    <gazebo reference="${name}/${prefix}_gripper_finger_${prefix}_gripper_bend">
+    <gazebo reference="${name}_${prefix}_gripper_finger_${prefix}_gripper_bend">
       <disableFixedJointLumping>true</disableFixedJointLumping>
       <preserveFixedJoint>true</preserveFixedJoint>
     </gazebo>
 
-    <joint name="${name}/input_${prefix}_finger" type="revolute">
+    <joint name="${name}_input_${prefix}_finger" type="revolute">
       <xacro:if value="${prefix == 'l'}">
         <origin xyz="0 0.01265 .0115" rpy="0 0 0" />
       </xacro:if>
       <xacro:if value="${prefix == 'r'}">
         <origin xyz="0 -0.01265 .0115" rpy="0 0 ${pi}" />
-        <mimic joint="${name}/input_l_finger" multiplier="1.0" offset="0" />
+        <mimic joint="${name}_input_l_finger" multiplier="1.0" offset="0" />
       </xacro:if>
       <parent link="${name}" />
-      <child link="${name}/${prefix}_finger" />
+      <child link="${name}_${prefix}_finger" />
       <limit effort="1000.0" velocity="1000.0" lower="0" upper="${0.37*pi}" />
     </joint>
-    <gazebo reference="${name}/input_${prefix}_finger">
+    <gazebo reference="${name}_input_${prefix}_finger">
       <physics>
         <ode>
           <implicit_spring_damper>true</implicit_spring_damper>
@@ -174,23 +174,23 @@
       </physics>
     </gazebo>
 
-    <joint name="${name}/${prefix}_finger_${prefix}_outer_linkage" type="fixed">
+    <joint name="${name}_${prefix}_finger_${prefix}_outer_linkage" type="fixed">
       <origin xyz="0 0.015 0" rpy="0 0 0" />
-      <parent link="${name}/${prefix}_finger" />
-      <child link="${name}/${prefix}_outer_linkage" />
+      <parent link="${name}_${prefix}_finger" />
+      <child link="${name}_${prefix}_outer_linkage" />
     </joint>
 
-    <joint name="${name}/${prefix}_outer_linkage_${prefix}_gripper" type="revolute">
+    <joint name="${name}_${prefix}_outer_linkage_${prefix}_gripper" type="revolute">
       <origin xyz="0 0.025 0.018" rpy="0 0 0" />
-      <parent link="${name}/${prefix}_outer_linkage" />
-      <child link="${name}/${prefix}_gripper" />
-      <mimic joint="${name}/input_l_finger" multiplier="-1.0" />
+      <parent link="${name}_${prefix}_outer_linkage" />
+      <child link="${name}_${prefix}_gripper" />
+      <mimic joint="${name}_input_l_finger" multiplier="-1.0" />
       <limit effort="1000.0" velocity="1000.0" lower="${-pi/2}" upper="0" />
     </joint>
   </xacro:macro>
 
   <xacro:macro name="parallel_gripper_inner_subassembly" params="name prefix">
-    <link name="${name}/${prefix}_inner_linkage">
+    <link name="${name}_${prefix}_inner_linkage">
       <visual>
         <origin xyz="-0.0115 -0.004 -0.004" rpy="0 0 0" />
         <geometry>
@@ -216,20 +216,22 @@
           izz="${1/12 * 0.010 * (0.02*0.02 + 0.05*0.05)}" />
       </inertial>
     </link>
-    <gazebo reference="${name}/${prefix}_inner_linkage">
+    <gazebo reference="${name}_${prefix}_inner_linkage">
       <xacro:gazebo_black_material />
     </gazebo>
 
-    <joint name="${name}/center_hub_${prefix}_inner_linkage" type="continuous">
+    <!-- ★修正箇所：typeをcontinuousからrevoluteに変更し、limitを追加 -->
+    <joint name="${name}_center_hub_${prefix}_inner_linkage" type="revolute">
       <xacro:if value="${prefix == 'l'}">
         <origin xyz="0 0.005 0.023" rpy="${-0.36*pi} 0 0" />
       </xacro:if>
       <xacro:if value="${prefix == 'r'}">
         <origin xyz="0 -0.005 0.023" rpy="${-0.36*pi} 0 ${pi}" />
       </xacro:if>
-      <parent link="${name}/center_hub" />
-      <child link="${name}/${prefix}_inner_linkage" />
-      <mimic joint="${name}/input_l_finger" multiplier="1.0" />
+      <parent link="${name}_center_hub" />
+      <child link="${name}_${prefix}_inner_linkage" />
+      <mimic joint="${name}_input_l_finger" multiplier="1.0" />
+      <limit effort="1000.0" lower="-3.14" upper="3.14" velocity="1000.0" />
     </joint>
   </xacro:macro>
 
@@ -289,12 +291,12 @@
         </inertial>
       </link>
 
-      <link name="${name}/output" />
+      <link name="${name}_output" />
 
-      <joint name="${name}/output_joint" type="fixed">
+      <joint name="${name}_output_joint" type="fixed">
         <origin xyz="${output_trans}" rpy="${output_rot}" />
         <parent link="${name}" />
-        <child link="${name}/output" />
+        <child link="${name}_output" />
       </joint>
     </xacro:if>
 
@@ -329,7 +331,7 @@
       </gazebo>
 
       <!-- Tree branch for center hub -->
-      <link name="${name}/center_hub">
+      <link name="${name}_center_hub">
         <visual>
           <origin xyz="-0.0225 0.0225 0" rpy="${pi/2} 0 0" />
           <geometry>
@@ -355,17 +357,17 @@
             izz="${0.66*0.010*pow(0.0225, 2)}" />
         </inertial>
       </link>
-      <gazebo reference="${name}/center_hub">
+      <gazebo reference="${name}_center_hub">
         <xacro:gazebo_black_material />
       </gazebo>
 
-      <joint name="${name}/input_center_hub" type="fixed">
+      <joint name="${name}_input_center_hub" type="fixed">
         <origin xyz="0 0 0.0045" rpy="0 0 0" />
         <parent link="${name}" />
-        <child link="${name}/center_hub" />
+        <child link="${name}_center_hub" />
       </joint>
 
-      <link name="${name}/center_pinion">
+      <link name="${name}_center_pinion">
         <visual>
           <origin xyz="-0.0145 -0.008 0.0038" rpy="${0.5*pi} ${0.0*pi} ${0.5*pi}" />
           <geometry>
@@ -391,27 +393,27 @@
             izz="${0.66*0.010*pow(0.0225, 2)}" />
         </inertial>
       </link>
-      <gazebo reference="${name}/center_pinion">
+      <gazebo reference="${name}_center_pinion">
         <self_collide>true</self_collide>
         <xacro:gazebo_silver_material />
       </gazebo>
 
-      <joint name="${name}/center_hub_pinion" type="prismatic">
-        <parent link="${name}/center_hub" />
-        <child link="${name}/center_pinion" />
+      <joint name="${name}_center_hub_pinion" type="prismatic">
+        <parent link="${name}_center_hub" />
+        <child link="${name}_center_pinion" />
         <origin xyz="0 0 0" rpy="0 0 0" />
         <axis xyz="0 0 1" />
         <limit effort="1000.0" velocity="1000.0" lower="-1.0" upper="1.0" />
         <!-- Don't actually want the pinion to move (only needed fore gazebo)
-             so set multiplier very small -->
-        <mimic joint="${name}/input_l_finger" multiplier="0.00001" offset="0" />
+              so set multiplier very small -->
+        <mimic joint="${name}_input_l_finger" multiplier="0.00001" offset="0" />
         <physics>
           <ode>
             <implicit_spring_damper>true</implicit_spring_damper>
           </ode>
         </physics>
       </joint>
-      <gazebo reference="${name}/center_hub_pinion">
+      <gazebo reference="${name}_center_hub_pinion">
         <disableFixedJointLumping>true</disableFixedJointLumping>
         <preserveFixedJoint>true</preserveFixedJoint>
       </gazebo>
@@ -424,10 +426,10 @@
       <xacro:parallel_gripper_inner_subassembly name="${name}" prefix="l" />
       <xacro:parallel_gripper_inner_subassembly name="${name}" prefix="r" />
       <gazebo>
-        <joint name="${name}/l_inner_outer_pin" type="revolute">
+        <joint name="${name}_l_inner_outer_pin" type="revolute">
           <pose>0 0 0.0439 0 0 0</pose>
-          <parent>${name}/l_gripper_bend</parent>
-          <child>${name}/l_inner_linkage</child>
+          <parent>${name}_l_gripper_bend</parent>
+          <child>${name}_l_inner_linkage</child>
           <axis>
             <xyz>-1 0 0</xyz>
             <limit>
@@ -438,10 +440,10 @@
             </limit>
           </axis>
         </joint>
-        <joint name="${name}/r_inner_outer_pin" type="revolute">
+        <joint name="${name}_r_inner_outer_pin" type="revolute">
           <pose>0 0 0.0439 0 0 0</pose>
-          <parent>${name}/r_gripper_bend</parent>
-          <child>${name}/r_inner_linkage</child>
+          <parent>${name}_r_gripper_bend</parent>
+          <child>${name}_r_inner_linkage</child>
           <axis>
             <xyz>-1 0 0</xyz>
             <limit>
@@ -454,9 +456,9 @@
         </joint>
 
         <!-- Add constraint between gripper fingers (they mirror each other) using a gearbox -->
-        <joint name="${name}/finger_gearbox" type="gearbox">
-          <parent>${name}/r_finger</parent>
-          <child>${name}/l_finger</child>
+        <joint name="${name}_finger_gearbox" type="gearbox">
+          <parent>${name}_r_finger</parent>
+          <child>${name}_l_finger</child>
           <gearbox_reference_body>${name}</gearbox_reference_body>
           <gearbox_ratio>1</gearbox_ratio>
           <axis>
@@ -468,12 +470,12 @@
         </joint>
       </gazebo>
 
-      <link name="${name}/output" />
+      <link name="${name}_output" />
 
-      <joint name="${name}/output_joint" type="fixed">
+      <joint name="${name}_output_joint" type="fixed">
         <origin xyz="0 0 0.05" rpy="0 0 0" />
         <parent link="${name}" />
-        <child link="${name}/output" />
+        <child link="${name}_output" />
       </joint>
     </xacro:if>
 

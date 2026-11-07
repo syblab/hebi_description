@@ -137,7 +137,7 @@
     </xacro:if>
 
     <!-- Link definition -->
-    <link name="${name}/body">
+    <link name="${name}_body">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
@@ -193,7 +193,7 @@
         </xacro:if>
       </inertial>
     </link>
-    <gazebo reference="${name}/body">
+    <gazebo reference="${name}_body">
       <xacro:if value="${model_name.startswith('X')}">
         <xacro:gazebo_red_material />
       </xacro:if>
@@ -208,7 +208,7 @@
     <!-- Normal actuator: parent feeds into body, output comes from joint -->
     <xacro:unless value="${reverse}">
       <joint name="${name}" type="${urdf_joint_type}">
-        <parent link="${name}/body" />
+        <parent link="${name}_body" />
         <child link="${child}" />
         <origin xyz="0 0 ${joint_offset}" rpy="0 0 0" />
         <axis xyz="0 0 1" />
@@ -231,7 +231,7 @@
     <xacro:if value="${reverse}">
       <joint name="${name}" type="${urdf_joint_type}">
         <parent link="${parent}" />
-        <child link="${name}/body" />
+        <child link="${name}_body" />
         <origin xyz="0 0 ${joint_offset}" rpy="0 ${pi} 0" />
         <axis xyz="0 0 -1" />
 
@@ -248,7 +248,7 @@
         <dynamics damping="${damping}" friction="${friction}" />
       </joint>
       <joint name="${name}_fixed" type="fixed">
-        <parent link="${name}/body" />
+        <parent link="${name}_body" />
         <child link="${child}" />
         <origin xyz="0 0 0" rpy="0 0 0" />
       </joint>
