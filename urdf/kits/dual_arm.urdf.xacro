@@ -103,6 +103,38 @@
     </visual>
   </link>
 
+  <!-- horizontal_bar_link and vertical_bar_left_link -->
+  <joint name="vertical_bar2_left_joint" type="fixed">
+    <parent link="horizontal_bar_link"/>
+    <child link="vertical_bar2_left_link"/>
+    <origin xyz="-0.23 0.0 0.06" rpy="0 1.57 0"/>
+  </joint>
+
+  <link name="vertical_bar2_left_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.41"/>
+      </geometry>
+      <material name="black" />
+    </visual>
+  </link>
+
+  <!-- horizontal_bar_link and vertical_bar_right_link -->
+  <joint name="vertical_bar2_right_joint" type="fixed">
+    <parent link="horizontal_bar_link"/>
+    <child link="vertical_bar2_right_link"/>
+    <origin xyz="-0.23 0.0 -0.06" rpy="0 1.57 0"/><!---0.21-->
+  </joint>
+
+  <link name="vertical_bar2_right_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.41"/>
+      </geometry>
+      <material name="black" />
+    </visual>
+  </link>
+
   <!-- ================= 左手 (Left Arm) ================= -->
   <!-- 左手ベースの位置と向き（例: Y軸方向に+30cm） -->
   <joint name="world_to_left_base" type="fixed">
