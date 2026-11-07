@@ -55,6 +55,53 @@
       </visual>
   </link>
 
+  <!-- base_link and vertical_bar_left_link -->
+  <joint name="vertical_bar_left_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="vertical_bar_left_link"/>
+    <origin xyz="-0.1225 0.06 0.245" rpy="0 0 0"/> <!--0.12 + 0.125--><!--0.2725 - 0.15-->
+  </joint>
+
+  <link name="vertical_bar_left_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.25"/>
+      </geometry>
+      <material name="black" />
+    </visual>
+  </link>
+
+  <!-- base_link and vertical_bar_right_link -->
+  <joint name="vertical_bar_right_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="vertical_bar_right_link"/>
+    <origin xyz="-0.1225 -0.06 0.245" rpy="0 0 0"/> <!--0.12 + 0.125-->
+  </joint>
+
+  <link name="vertical_bar_right_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.25"/>
+      </geometry>
+      <material name="black" />
+    </visual>
+  </link>
+
+  <!-- vertical_bar_right_link to horizontal_bar_joint -->
+  <joint name="horizontal_bar_joint" type="fixed">
+    <parent link="vertical_bar_right_link"/>
+    <child link="horizontal_bar_link"/>
+    <origin xyz="0.0 0.06 0.15" rpy="0 1.57 1.57"/><!--0.025 + 0.125-->
+  </joint>
+
+  <link name="horizontal_bar_link">
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.445"/>
+      </geometry>
+      <material name="black" />
+    </visual>
+  </link>
 
   <!-- ================= 左手 (Left Arm) ================= -->
   <!-- 左手ベースの位置と向き（例: Y軸方向に+30cm） -->
