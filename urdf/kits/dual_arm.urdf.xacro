@@ -170,8 +170,8 @@
   <!-- ================= 左手 (Left Arm) ================= -->
   <!-- 左手ベースの位置と向き（例: Y軸方向に+30cm） -->
   <joint name="world_to_left_base" type="fixed">
-    <origin xyz="0 0.13 0" rpy="0 0 -1.75" /> 
-    <parent link="world" />
+    <origin xyz="0.025 0.0 -0.06" rpy="0 1.57 0" /> 
+    <parent link="horizontal_left_bar_link" />
     <child link="left_base_link" />
   </joint>
 
@@ -186,8 +186,8 @@
   <!-- ================= 右手 (Right Arm) ================= -->
   <!-- 右手ベースの位置と向き（例: Y軸方向に-30cm） -->
   <joint name="world_to_right_base" type="fixed">
-    <origin xyz="0 0.0 0" rpy="0 0 0" /> 
-    <parent link="world" />
+    <origin xyz="0.025 0.0 -0.06" rpy="0 1.57 0" /> 
+    <parent link="horizontal_right_bar_link" />
     <child link="right_base_link" />
   </joint>
 
